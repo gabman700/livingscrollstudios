@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Living Scroll Studios — Cinematic AI Films & Music Videos</title>
-<meta name="description" content="Living Scroll Studios creates cinematic AI-directed biblical films for churches and ministries, and premium AI music videos for artists. Where Scripture comes to life.">
-<meta property="og:title" content="Living Scroll Studios — Where Scripture Comes to Life">
-<meta property="og:description" content="Cinematic AI films for churches & ministries, and AI music videos for artists.">
-<meta property="og:image" content="https://i.ytimg.com/vi/PURCv5nHZ6I/maxresdefault.jpg">
+<meta name="description" content="Living Scroll Studios directs cinematic AI films and music videos — premium music videos for artists across Afrobeats, Amapiano, R&B and more, plus biblical storytelling for churches and ministries.">
+<meta property="og:title" content="Living Scroll Studios — Cinematic AI Filmmaking">
+<meta property="og:description" content="Cinematic AI music videos for artists, and cinematic AI films for churches & ministries.">
+<meta property="og:image" content="https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg">
 <meta property="og:url" content="https://livingscrollstudios.com">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23120f0a'/><text x='32' y='42' font-family='Georgia' font-size='28' fill='%23c9a45c' text-anchor='middle'>LS</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* hero */
 .hero{min-height:100vh;display:flex;align-items:flex-end;padding:0 0 90px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://i.ytimg.com/vi/PURCv5nHZ6I/maxresdefault.jpg') center/cover no-repeat;filter:saturate(.9)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg::before,.hero-bg::after{content:"";position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.9)}
+.hero-bg::before{background-image:url('https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg');animation:heroFadeA 14s ease-in-out infinite}
+.hero-bg::after{background-image:url('https://i.ytimg.com/vi/PURCv5nHZ6I/maxresdefault.jpg');animation:heroFadeB 14s ease-in-out infinite}
+@keyframes heroFadeA{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+@keyframes heroFadeB{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,8,.35) 0%,rgba(15,12,8,.55) 45%,var(--bg) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:.6rem 0 1rem}
@@ -121,7 +126,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 /* about */
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.about-img{aspect-ratio:4/5;border-radius:18px;background:url('https://i.ytimg.com/vi/8KvAYfOOLuA/maxresdefault.jpg') center/cover;border:1px solid var(--line)}
+.about-img{aspect-ratio:4/5;border-radius:18px;background:url('https://i.ytimg.com/vi/x-gnlZfUs_U/maxresdefault.jpg') center/cover;border:1px solid var(--line)}
 .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.4rem}
 .tools span{border:1px solid var(--line);border-radius:999px;padding:.3rem .8rem;font-size:.8rem;color:var(--muted)}
 
@@ -152,11 +157,11 @@ footer a:hover{color:var(--gold2)}
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero-bg" role="img" aria-label="Still from The Chronicler: Noah & The Great Flood"></div>
+  <div class="hero-bg" role="img" aria-label="Stills from Living Scroll Studios' music video and biblical film work"></div>
   <div class="wrap">
-    <div class="eyebrow">AI Filmmaking · Cinematic Storytelling · Music Videos</div>
-    <h1>Where Scripture<br><em>Comes to Life</em></h1>
-    <p class="lead">Living Scroll Studios creates cinematic, AI-directed films for churches and ministries — and premium music videos for artists. Real storytelling, directed with purpose.</p>
+    <div class="eyebrow">AI Filmmaking · Music Videos · Cinematic Storytelling</div>
+    <h1>Cinematic Stories,<br><em>Any Genre</em></h1>
+    <p class="lead">Living Scroll Studios directs cinematic AI music videos for artists — Afrobeats, Amapiano, R&amp;B and more — plus biblical films for churches and ministries. Real storytelling, directed with purpose.</p>
     <div class="ctas">
       <a href="#work" class="btn btn-gold">Watch our work</a>
       <a href="#contact" class="btn btn-ghost">Book a project</a>
@@ -176,6 +181,21 @@ footer a:hover{color:var(--gold2)}
     <p class="lead">Every project runs through the same directed pipeline — concept, script, visual development, generative production, editing and sound — so the result feels like film, not AI clips.</p>
     <div class="services-grid">
       <article class="svc">
+        <div class="svc-img" style="background-image:url('https://i.ytimg.com/vi/x-gnlZfUs_U/hqdefault.jpg')"></div>
+        <div class="svc-body">
+          <div class="for">For artists &amp; labels</div>
+          <h3>AI Music Videos</h3>
+          <p>Premium music videos with strong character consistency, lip-sync, performance and cinematic environments — Afrobeats, Amapiano, R&amp;B, gospel and more.</p>
+          <ul>
+            <li>Performance &amp; narrative music videos</li>
+            <li>Recurring artist identity across scenes</li>
+            <li>Multiple environments &amp; dance sequences</li>
+            <li>Promo clips for TikTok, Reels and Shorts</li>
+          </ul>
+          <a href="#pricing" class="btn btn-ghost">See music video packages</a>
+        </div>
+      </article>
+      <article class="svc">
         <div class="svc-img" style="background-image:url('https://i.ytimg.com/vi/PURCv5nHZ6I/hqdefault.jpg')"></div>
         <div class="svc-body">
           <div class="for">For churches &amp; ministries</div>
@@ -188,21 +208,6 @@ footer a:hover{color:var(--gold2)}
             <li>Consistent characters across episodes</li>
           </ul>
           <a href="#contact" class="btn btn-ghost">Request a ministry quote</a>
-        </div>
-      </article>
-      <article class="svc">
-        <div class="svc-img" style="background-image:url('https://i.ytimg.com/vi/x-gnlZfUs_U/hqdefault.jpg')"></div>
-        <div class="svc-body">
-          <div class="for">For artists &amp; labels</div>
-          <h3>AI Music Videos</h3>
-          <p>Premium music videos with strong character consistency, lip-sync, performance and cinematic environments — gospel, Afrobeats, Amapiano, R&amp;B and more.</p>
-          <ul>
-            <li>Performance &amp; narrative music videos</li>
-            <li>Recurring artist identity across scenes</li>
-            <li>Multiple environments &amp; dance sequences</li>
-            <li>Promo clips for TikTok, Reels and Shorts</li>
-          </ul>
-          <a href="#pricing" class="btn btn-ghost">See music video packages</a>
         </div>
       </article>
     </div>
@@ -304,13 +309,13 @@ footer a:hover{color:var(--gold2)}
       <div class="eyebrow">The director</div>
       <h2>Gabriel Ogunsanya</h2>
       <p class="lead" style="margin-bottom:1rem">Founder &amp; Creative Director · AI Filmmaker · Generative AI Video Director</p>
-      <p style="color:var(--muted);margin-bottom:1rem">Gabriel founded Living Scroll Studios to tell stories that matter with the most powerful visual tools of our time. His work spans biblical storytelling, worship films, Christian music videos and original cinematic music-video concepts — each produced through a controlled pipeline that moves from concept and script to a polished final film.</p>
+      <p style="color:var(--muted);margin-bottom:1rem">Gabriel founded Living Scroll Studios to tell stories that matter with the most powerful visual tools of our time. His work spans cinematic AI music videos across Afrobeats, Amapiano, R&amp;B and original concept films — alongside biblical storytelling and worship films for churches and ministries — each produced through a controlled pipeline that moves from concept and script to a polished final film.</p>
       <p style="color:var(--muted)">The studio's YouTube channel has grown to more than 30,000 subscribers through serialized, character-driven cinematic storytelling.</p>
       <div class="tools">
         <span>ComfyUI</span><span>Seedance</span><span>Veo 3.1</span><span>Kling</span><span>Runway</span><span>LTX</span><span>MiniMax</span><span>Midjourney</span><span>ElevenLabs</span><span>Suno</span><span>CapCut</span>
       </div>
     </div>
-    <div class="about-img" role="img" aria-label="Still from a Living Scroll Studios worship film"></div>
+    <div class="about-img" role="img" aria-label="Still from a Living Scroll Studios music video"></div>
   </div>
 </section>
 
@@ -330,7 +335,7 @@ footer a:hover{color:var(--gold2)}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> Living Scroll Studios. Where Scripture comes to life.</span>
+    <span>© <span id="yr"></span> Living Scroll Studios. Cinematic AI storytelling for artists, brands and ministries.</span>
     <span><a href="#top">Back to top ↑</a></span>
   </div>
 </footer>
