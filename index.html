@@ -48,12 +48,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* hero */
 .hero{min-height:100vh;display:flex;align-items:flex-end;padding:0 0 90px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0}
-.hero-bg::before,.hero-bg::after{content:"";position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.9)}
-.hero-bg::before{background-image:url('https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg');animation:heroFadeA 14s ease-in-out infinite}
-.hero-bg::after{background-image:url('https://i.ytimg.com/vi/PURCv5nHZ6I/maxresdefault.jpg');animation:heroFadeB 14s ease-in-out infinite}
-@keyframes heroFadeA{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
-@keyframes heroFadeB{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+.hero-bg{position:absolute;inset:0;background:url('https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg') center/cover no-repeat;filter:saturate(.9)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,8,.35) 0%,rgba(15,12,8,.55) 45%,var(--bg) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{font-size:clamp(3rem,8vw,6.2rem);margin:.6rem 0 1rem}
