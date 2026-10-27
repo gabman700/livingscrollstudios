@@ -83,6 +83,19 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .film p{color:var(--muted);font-size:.88rem}
 @media(max-width:700px){.reels .film .meta{padding:12px 12px 14px}.reels .film h3{font-size:1.05rem}.reels .film p{display:none}}
 .more{margin-top:2rem;display:flex;gap:12px;flex-wrap:wrap}
+/* featured release */
+.feature{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:36px;align-items:center;margin-top:2.2rem;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.feature .film{border:0;border-radius:12px;background:#000}
+.feature .thumb.v,.feature iframe.v{border-radius:12px}
+.feature .play{width:72px;height:72px}
+.feature .play::before{border-left-width:21px;border-top-width:12px;border-bottom-width:12px}
+.feature-copy .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.feature-copy h3{font-size:clamp(1.7rem,4vw,2.4rem);margin:.4rem 0 .6rem;line-height:1.15}
+.feature-copy p{color:var(--muted);max-width:460px}
+.feature-copy .ctas{margin-top:1.4rem}
+.reels-label{margin-top:2.6rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.reels-label+.reels{margin-top:1rem}
+@media(max-width:760px){.feature{grid-template-columns:1fr;gap:20px;padding:14px}.feature .film{width:100%;max-width:340px;margin:0 auto}.feature-copy{text-align:center}.feature-copy p{margin:0 auto}.feature-copy .ctas{justify-content:center}}
 
 /* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.2rem}
@@ -185,6 +198,20 @@ footer a:hover{color:var(--gold2)}
     <h2>Faith-filled stories, told cinematically</h2>
     <p class="lead">Tap any video to play it here. Our videos are made with AI-assisted generative filmmaking. Every scene is written, directed and quality-checked by hand.</p>
 
+    <div class="feature" id="featured">
+      <div id="feature-film"></div>
+      <div class="feature-copy">
+        <div class="tag">New release · Featured</div>
+        <h3>You Never Let Me Go</h3>
+        <p>A cinematic gospel music video celebrating God's unfailing love and faithfulness. Created to inspire faith, hope and worship.</p>
+        <div class="ctas">
+          <button type="button" class="btn btn-gold" id="feature-play">▶ Play video</button>
+          <a class="btn btn-ghost" href="https://www.youtube.com/shorts/ERpq_5jUbP4" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reels-label">More gospel productions</div>
     <div class="reels" id="reels"></div>
     <div class="wides" id="wides"></div>
 
@@ -342,7 +369,7 @@ footer a:hover{color:var(--gold2)}
 </footer>
 
 <script>
-// Featured order: gospel music first, then worship, then ministry film.
+// Featured release sits above these. Order: gospel music first, then worship, then ministry film.
 const films=[
   {id:'ZpQgVRqv7is',v:true,tag:'Gospel Afrobeats · vertical',title:'You No Dey Fail',desc:'A joyful Nigerian gospel praise video celebrating a dependable God.'},
   {id:'msya4chEh10',v:true,tag:'Gospel performance · vertical',title:'Lift Up Your Head (Part 1)',desc:'An intimate, emotional gospel performance on a worship stage.'},
@@ -360,6 +387,12 @@ function card(x){
   return el;
 }
 films.forEach(x=>document.getElementById(x.v?'reels':'wides').appendChild(card(x)));
+// Featured release: plays inline; the button and YouTube link are fallbacks.
+const feat={id:'ERpq_5jUbP4',v:true,tag:'',title:'You Never Let Me Go',desc:''};
+const fc=card(feat);fc.querySelector('.meta').remove();
+fc.querySelector('.thumb').style.backgroundImage="url('https://i.ytimg.com/vi/ERpq_5jUbP4/oardefault.jpg'),url('https://i.ytimg.com/vi/ERpq_5jUbP4/hqdefault.jpg')";
+document.getElementById('feature-film').appendChild(fc);
+document.getElementById('feature-play').addEventListener('click',()=>{const t=fc.querySelector('.thumb');if(t)t.click();fc.scrollIntoView({behavior:'smooth',block:'center'})});
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 // Enquiry form: submits to Web3Forms in the background and shows the confirmation on the page.
