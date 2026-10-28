@@ -24,14 +24,16 @@ th,td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical
 th{background:var(--card);color:var(--gold2);font-weight:600}
 .wrap-table{overflow-x:auto}
 footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:var(--muted);font-size:.85rem}
+button.cc{background:transparent;border:1px solid var(--gold);color:var(--gold2);border-radius:999px;padding:.55rem 1.1rem;font:inherit;cursor:pointer}
 </style>
+<script src="/consent.js" defer></script>
 </head>
 <body>
 <main>
 
   <p class="eyebrow" style="margin-top:28px">Living Scroll Studios</p>
   <h1>Privacy Notice</h1>
-  <p class="updated">Last updated: 27 October 2026</p>
+  <p class="updated">Last updated: 28 October 2026</p>
 
   <p>This notice explains how Living Scroll Studios collects and uses personal information when you enquire about a project through our website, a Facebook or Instagram lead form, WhatsApp or email. We collect only what we need to reply to you and to plan and quote your project.</p>
 
@@ -54,7 +56,8 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:v
     <tr><td>Replying to your enquiry, asking follow-up questions and sending a quote</td><td>Steps you asked us to take before entering a contract, and our legitimate interest in responding to enquiries</td></tr>
     <tr><td>Producing and delivering your project, invoicing and payment</td><td>Performance of a contract</td></tr>
     <tr><td>Keeping basic business and accounting records</td><td>Legal obligation and legitimate interests</td></tr>
-    <tr><td>Understanding which adverts bring enquiries (counts and sources, not profiles)</td><td>Legitimate interests</td></tr>
+    <tr><td>Counting which adverts and links bring enquiries, using Meta's lead form reports and tags in our web links (counts and sources, not profiles)</td><td>Legitimate interests</td></tr>
+    <tr><td>Website analytics (Google Analytics), only if you allow it</td><td>Consent, which you can withdraw at any time through "Cookie settings"</td></tr>
   </table></div>
   <p>We don't sell your information and won't add you to a mailing list or broadcast list without your separate agreement.</p>
 
@@ -62,6 +65,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:v
   <ul>
     <li><b>Web3Forms</b>, which delivers website form submissions to our inbox.</li>
     <li><b>Meta Platforms</b> (Facebook, Instagram, WhatsApp), when you use a Meta lead form or contact us on WhatsApp. Meta's own privacy policy also applies.</li>
+    <li><b>Google</b>, through Google Analytics, if you allow analytics cookies.</li>
     <li><b>Our email provider:</b> Google Workspace</li>
     <li><b>Payment provider for deposits:</b> Selar</li>
     <li><b>Professional advisers or authorities</b>, where the law requires it.</li>
@@ -76,8 +80,15 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:v
     <li>Client project and invoicing records: up to 6 years for accounting purposes.</li>
   </ul>
 
-  <h2>Cookies and website tracking</h2>
-  <p>Our website doesn't use advertising or analytics cookies. Videos are embedded with YouTube's privacy-enhanced mode and load only when you press play, after which YouTube's own policy applies. Fonts are loaded from Google Fonts, which receives your IP address to deliver them. If we add advertising tracking such as the Meta Pixel in future, we'll ask for your consent first and update this notice.</p>
+  <h2 id="cookies">Cookies and website tracking</h2>
+  <p>We only use analytics cookies if you allow them. We don't use advertising cookies on this website. When you first visit, a banner lets you accept all, reject all or choose. Nothing optional loads until you decide, and rejecting is as easy as accepting.</p>
+  <div class="wrap-table"><table>
+    <tr><th>Type</th><th>What it does</th><th>Provider and cookies</th><th>How long</th></tr>
+    <tr><td>Strictly necessary</td><td>Remembers your cookie choice so we don't ask on every page.</td><td>Living Scroll Studios: <code>lss_consent_v1</code> (stored in your browser)</td><td>About 6 months, then we ask again</td></tr>
+    <tr><td>Analytics (optional)</td><td>Counts visits, which pages and links are used, where visitors came from (including link tags such as <code>utm_source</code>) and how many enquiries are sent. We don't send your name, email or form answers to Google.</td><td>Google Analytics: <code>_ga</code>, <code>_ga_*</code></td><td>Up to 13 months</td></tr>
+  </table></div>
+  <p>You can change or withdraw your choice at any time: <button type="button" class="cc" data-cookie-settings>Cookie settings</button>. Withdrawing removes these cookies from our site and stops further tracking; it doesn't affect what was collected before.</p>
+  <p>Videos are embedded with YouTube's privacy-enhanced mode and load only when you press play, after which YouTube's own policy applies. Fonts are loaded from Google Fonts, which receives your IP address to deliver them.</p>
 
   <h2>Your rights</h2>
   <p>Under UK data protection law you can ask to access, correct or delete your information, restrict or object to how we use it, and receive a copy in a portable format. Email us at the address above and we'll respond within one month.</p>
@@ -89,7 +100,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:v
   <h2>Changes</h2>
   <p>We may update this notice. The date at the top shows when it last changed.</p>
 
-  <footer>© <span id="yr"></span> Living Scroll Studios · <a href="/uk-gospel/">UK gospel projects</a> · <a href="/">Main site</a></footer>
+  <footer>© <span id="yr"></span> Living Scroll Studios · <a href="/uk-gospel/">UK gospel projects</a> · <a href="/">Main site</a> · <a href="#" data-cookie-settings>Cookie settings</a></footer>
 </main>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
