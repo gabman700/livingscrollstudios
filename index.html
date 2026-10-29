@@ -340,6 +340,7 @@ footer a:hover{color:var(--gold2)}
 const films=[
   {id:'PURCv5nHZ6I',cat:'bible',tag:'Cinematic Bible short',title:'The Chronicler: Noah & The Great Flood',desc:'Noah through the corruption of the earth, the Ark, the Flood, survival and God\'s covenant.'},
   {id:'8KvAYfOOLuA',cat:'bible',tag:'Yoruba worship film',title:'Fí Ìbùkún Rẹ́ Tú Wá Ká',desc:'Yoruba worship music paired with cinematic scenes of Jesus teaching and comforting His disciples.'},
+  {id:'WKdoRQToIVc',cat:'music',tag:'UK Pop / R&B · Romantic music video',title:'Undeniable Love',desc:'A cinematic romantic music video set in London, exploring the beauty of falling in love, emotional connection and the moments that make love undeniable. AI-assisted filmmaking with consistent characters and music-driven storytelling.',thumb:'/work/undeniable-love-thumb.jpg'},
   {id:'pKyHAwMQ35Q',cat:'music',tag:'Afrobeats x Amapiano dance video',title:'Yebo',desc:'One consistent artist across six locations (studio, rooftop, streets and the big stage) with a full dance crew.'},
   {id:'RBP6v1-6Yxs',cat:'music',tag:'Cyber-pop music film',title:'Chroma Protocol',desc:'A high-concept music video with a bold cyber-pop identity and a character held consistent across every shot.'},
   {id:'x-gnlZfUs_U',cat:'music',tag:'R&B / Neo-soul',title:'Midnight Bloom',desc:'Warm, intimate performance staging, recurring artist identity and multi-location continuity.'},
@@ -352,7 +353,7 @@ function render(f){
   grid.innerHTML='';
   films.filter(x=>f==='all'||x.cat===f).forEach(x=>{
     const el=document.createElement('article');el.className='film';
-    el.innerHTML=`<div class="thumb" style="background-image:url('https://i.ytimg.com/vi/${x.id}/hqdefault.jpg')" role="button" tabindex="0" aria-label="Play ${x.title}"><div class="play"></div></div><div class="meta"><div class="tag">${x.tag}</div><h3>${x.title}</h3><p>${x.desc}</p></div>`;
+    el.innerHTML=`<div class="thumb" style="background-image:url('${x.thumb||'https://i.ytimg.com/vi/'+x.id+'/hqdefault.jpg'}')" role="button" tabindex="0" aria-label="Play ${x.title}"><div class="play"></div></div><div class="meta"><div class="tag">${x.tag}</div><h3>${x.title}</h3><p>${x.desc}</p></div>`;
     const t=el.querySelector('.thumb');
     const play=()=>{t.outerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${x.id}?autoplay=1&rel=0" title="${x.title}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`};
     t.addEventListener('click',play);t.addEventListener('keydown',e=>{if(e.key==='Enter')play()});
