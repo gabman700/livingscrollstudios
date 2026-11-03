@@ -221,7 +221,7 @@ footer a:hover{color:var(--gold2)}
     <div class="filters" role="tablist">
       <button class="on" data-f="all">All</button>
       <button data-f="bible">Biblical &amp; worship</button>
-      <button data-f="music">Music videos</button>
+      <button data-f="music">Music videos</button><button data-f="shorts">Featured Shorts</button>
     </div>
     <div class="grid" id="grid"></div>
     <div class="more" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-ghost" href="https://www.youtube.com/@LivingScrollStudios" target="_blank" rel="noopener">Faith films on YouTube →</a><a class="btn btn-ghost" href="https://www.youtube.com/@lssvisuals" target="_blank" rel="noopener">Music videos on YouTube →</a></div>
@@ -345,18 +345,21 @@ footer a:hover{color:var(--gold2)}
 const films=[
   {id:'PURCv5nHZ6I',cat:'bible',tag:'Cinematic Bible short',title:'The Chronicler: Noah & The Great Flood',desc:'Noah through the corruption of the earth, the Ark, the Flood, survival and God\'s covenant.'},
   {id:'8KvAYfOOLuA',cat:'bible',tag:'Yoruba worship film',title:'Fí Ìbùkún Rẹ́ Tú Wá Ká',desc:'Yoruba worship music paired with cinematic scenes of Jesus teaching and comforting His disciples.'},
-  {id:'WKdoRQToIVc',cat:'music',tag:'UK Pop / R&B · Romantic music video',title:'Undeniable Love',desc:'A cinematic romantic music video set in London, exploring the beauty of falling in love, emotional connection and the moments that make love undeniable. AI-assisted filmmaking with consistent characters and music-driven storytelling.',thumb:'/work/undeniable-love-thumb.jpg'},
+  {id:'WKdoRQToIVc',shorts:true,cat:'music',tag:'UK Pop / R&B · Romantic music video',title:'Undeniable Love',desc:'A cinematic romantic music video set in London, exploring the beauty of falling in love, emotional connection and the moments that make love undeniable. AI-assisted filmmaking with consistent characters and music-driven storytelling.',thumb:'/work/undeniable-love-thumb.jpg'},
   {id:'pKyHAwMQ35Q',cat:'music',tag:'Afrobeats x Amapiano dance video',title:'Yebo',desc:'One consistent artist across six locations (studio, rooftop, streets and the big stage) with a full dance crew.'},
   {id:'RBP6v1-6Yxs',cat:'music',tag:'Cyber-pop music film',title:'Chroma Protocol',desc:'A high-concept music video with a bold cyber-pop identity and a character held consistent across every shot.'},
   {id:'x-gnlZfUs_U',cat:'music',tag:'R&B / Neo-soul',title:'Midnight Bloom',desc:'Warm, intimate performance staging, recurring artist identity and multi-location continuity.'},
   {id:'IJYsBCmVcic',cat:'music',tag:'Cinematic music video',title:'After the Silence',desc:'An emotionally driven performance in the rain — mood and restraint carrying the story.'},
   {id:'QcLVR67B0rg',cat:'music',tag:'Cinematic Afrobeats story',title:'Afro Story Change',desc:'A cinematic Afrobeats story — visuals that shift and evolve scene to scene with the song.'},
-  {id:'GtJBdLrgl38',cat:'music',tag:'Afrobeats club video',title:'I Glow',desc:'Club lights, city energy and an Afrobeats groove that doesn\'t let up.'}
+  {id:'GtJBdLrgl38',shorts:true,cat:'music',tag:'Afrobeats club video',title:'I Glow',desc:'Club lights, city energy and an Afrobeats groove that doesn\'t let up.'},
+  {id:'ERpq_5jUbP4',shorts:true,cat:'music',tag:'YouTube Short',title:'YOU NEVER LET ME GO | Cinematic Gospel Music Video',desc:''},
+  {id:'ZpQgVRqv7is',shorts:true,cat:'music',tag:'YouTube Short',title:'YOU NO DEY FAIL 🙌 | Nigerian Gospel Afrobeats | Dependable God | Living Scroll Studio',desc:''},
+  {id:'msya4chEh10',shorts:true,cat:'music',tag:'YouTube Short',title:'LIFT UP YOUR HEAD PART 1',desc:''}
 ];
 const grid=document.getElementById('grid');
 function render(f){
   grid.innerHTML='';
-  films.filter(x=>f==='all'||x.cat===f).forEach(x=>{
+  films.filter(x=>f==='all'||x.cat===f||(f==='shorts'&&x.shorts)).forEach(x=>{
     const el=document.createElement('article');el.className='film';
     el.innerHTML=`<div class="thumb" style="background-image:url('${x.thumb||'https://i.ytimg.com/vi/'+x.id+'/hqdefault.jpg'}')" role="button" tabindex="0" aria-label="Play ${x.title}"><div class="play"></div></div><div class="meta"><div class="tag">${x.tag}</div><h3>${x.title}</h3><p>${x.desc}</p></div>`;
     const t=el.querySelector('.thumb');
