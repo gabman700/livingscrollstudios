@@ -1,3 +1,4 @@
+# Re-triggers CI after the portfolio PR (#16) was merged into main.
 name: tests
 
 on:
