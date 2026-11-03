@@ -14,15 +14,15 @@ const OFFICIAL_EMAIL = 'gabrielogunsanya@livingscrollstudios.com';
 const OFFICIAL_WA = '2347047237739';
 
 const PACKAGES = [
-  { name: 'Promo Clip', total: 'R1,500', deposit: 'R750', balance: 'R750', enc: 'Promo%20Clip', encTotal: 'R1%2C500' },
-  { name: 'Full Video', total: 'R3,500', deposit: 'R1,750', balance: 'R1,750', enc: 'Full%20Video', encTotal: 'R3%2C500' },
-  { name: 'Full Song', total: 'R6,000', deposit: 'R3,000', balance: 'R3,000', enc: 'Full%20Song', encTotal: 'R6%2C000' }
+  { name: 'Music Video under 1 minute', total: 'R1,500', deposit: 'R750', balance: 'R750', enc: 'Music%20Video%20under%201%20minute', encTotal: 'R1%2C500' },
+  { name: 'Music Video under 2 minutes', total: 'R2,500', deposit: 'R1,250', balance: 'R1,250', enc: 'Music%20Video%20under%202%20minutes', encTotal: 'R2%2C500' },
+  { name: 'Full Song Music Video', total: 'R3,500', deposit: 'R1,750', balance: 'R1,750', enc: 'Full%20Song%20Music%20Video', encTotal: 'R3%2C500' }
 ];
 
 test('only the three approved ZAR prices appear; no naira, USD, GBP or Selar', function () {
   assert.equal(/₦|\bNGN\b|\bUSD\b|\bGBP\b|\$\s?\d/.test(html), false);
   const prices = [...new Set(html.match(/\bR\s?\d[\d,]*/g) || [])].sort();
-  assert.deepEqual(prices, ['R1,500', 'R1,750', 'R3,000', 'R3,500', 'R6,000', 'R750'].sort());
+  assert.deepEqual(prices, ['R750', 'R1,250', 'R1,500', 'R1,750', 'R2,500', 'R3,500'].sort());
   assert.equal(/selar\.com|PLACEHOLDER/i.test(html), false);
   assert.equal(/paystack|flutterwave|paypal|stripe/i.test(html), false);
 });
@@ -33,8 +33,8 @@ test('page is live: no DRAFT banner and indexable', function () {
 });
 
 test('three packages show their total and a 50/50 deposit and balance', function () {
-  const names = [...html.matchAll(/<h3>(Promo Clip|Full Video|Full Song)<\/h3>/g)].map(function (m) { return m[1]; });
-  assert.deepEqual(names, ['Promo Clip', 'Full Video', 'Full Song']);
+  const names = [...html.matchAll(/<h3>(Music Video under 1 minute|Music Video under 2 minutes|Full Song Music Video)<\/h3>/g)].map(function (m) { return m[1]; });
+  assert.deepEqual(names, ['Music Video under 1 minute', 'Music Video under 2 minutes', 'Full Song Music Video']);
   PACKAGES.forEach(function (p) {
     assert.match(html, new RegExp('<div class="price">' + p.total + '</div>\\s*<p class="split">Deposit ' + p.deposit + ' <span>·</span> Balance ' + p.balance + '</p>'));
     assert.equal(Number(p.total.replace(/[R,]/g, '')) / 2, Number(p.deposit.replace(/[R,]/g, '')));
@@ -131,7 +131,7 @@ test('no unverified Selar or payment links; each package keeps a WhatsApp bookin
   assert.equal(/selar\.(co|com)|flutterwave|paystack/i.test(html), false);
   const waBooks = html.match(/>Book on WhatsApp<\/a>/g) || [];
   assert.equal(waBooks.length, 3);
-  ['Promo%20Clip', 'Full%20Video', 'Full%20Song'].forEach(function (p) { assert.match(html, new RegExp(p)); });
+  ['Music%20Video%20under%201%20minute', 'Music%20Video%20under%202%20minutes', 'Full%20Song%20Music%20Video'].forEach(function (p) { assert.match(html, new RegExp(p)); });
 });
 
 test('homepage links to the South Africa page and keeps the Nigeria and USD links', function () {
