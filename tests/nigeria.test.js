@@ -35,14 +35,23 @@ test('SEO: Nigeria-specific title and description, canonical URL, indexable', fu
   assert.match(html, /<link rel="canonical" href="https:\/\/livingscrollstudios\.com\/nigeria\/">/);
 });
 
-test('referrer policy lets the four portfolio videos play, and watch links remain', function () {
+test('referrer policy lets the nine portfolio videos play, and watch links remain', function () {
   assert.equal(/<meta name="referrer" content="no-referrer">/.test(html), false);
-  assert.equal([...html.matchAll(/youtube-nocookie\.com\/embed\//g)].length, 4);
-  assert.equal([...html.matchAll(/Watch on YouTube/g)].length, 4);
+  assert.equal([...html.matchAll(/youtube-nocookie\.com\/embed\//g)].length, 9);
+  assert.equal([...html.matchAll(/Watch on YouTube/g)].length, 9);
 });
 
 test('email contact and cross-links are present', function () {
   assert.match(html, /mailto:gabrielogunsanya@livingscrollstudios\.com/);
   assert.match(html, /href="\/south-africa\/"/);
   assert.match(html, /href="\/booking-request\/"/);
+});
+
+test('five Featured Shorts and four Full Music Videos, with no duplicate embeds', function () {
+  const ids = [...html.matchAll(/youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})\?rel=0/g)].map(function (m) { return m[1]; });
+  assert.deepEqual(ids.slice(0, 5), ['WKdoRQToIVc', 'ERpq_5jUbP4', 'ZpQgVRqv7is', 'GtJBdLrgl38', 'msya4chEh10']);
+  assert.deepEqual(ids.slice(5), ['pKyHAwMQ35Q', 'x-gnlZfUs_U', '8KvAYfOOLuA', 'PURCv5nHZ6I']);
+  assert.equal(new Set(ids).size, 9);
+  assert.match(html, /<h3 class="group-title">Featured Shorts<\/h3>/);
+  assert.match(html, /<h3 class="group-title">Full Music Videos<\/h3>/);
 });

@@ -92,12 +92,14 @@ test('no form, no script; only approved font links', function () {
   assert.match(html, /http-equiv="Content-Security-Policy" content="default-src 'none'/);
 });
 
-test('four approved portfolio embeds, with Yebo kept in a portrait frame', function () {
+test('five approved Featured Shorts (portrait) and four Full Music Videos', function () {
   const ids = [...html.matchAll(/youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})\?rel=0/g)].map(function (m) { return m[1]; });
-  assert.deepEqual(ids, ['pKyHAwMQ35Q', 'x-gnlZfUs_U', '8KvAYfOOLuA', 'PURCv5nHZ6I']);
-  assert.match(html, /class="film portrait">\s*<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/pKyHAwMQ35Q/);
+  assert.deepEqual(ids.slice(0, 5), ['WKdoRQToIVc', 'ERpq_5jUbP4', 'ZpQgVRqv7is', 'GtJBdLrgl38', 'msya4chEh10']);
+  assert.deepEqual(ids.slice(5), ['pKyHAwMQ35Q', 'x-gnlZfUs_U', '8KvAYfOOLuA', 'PURCv5nHZ6I']);
+  assert.equal(new Set(ids).size, 9);
+  assert.equal([...html.matchAll(/class="film portrait">/g)].length, 6); // five Shorts plus Yebo, which was already portrait
   assert.match(html, /\.film\.portrait\{aspect-ratio:9\/16/);
-  assert.match(html, /Afrobeats x Amapiano dance video/);
+  assert.match(html, /\/shorts\/msya4chEh10/);
   assert.equal(/South African slang/i.test(html), false);
 });
 
@@ -122,7 +124,7 @@ test('internal links point to pages that exist', function () {
 test('referrer policy lets YouTube embeds play (not no-referrer)', function () {
   assert.equal(/<meta name="referrer" content="no-referrer">/.test(html), false);
   assert.match(html, /<meta name="referrer" content="strict-origin-when-cross-origin">/);
-  assert.equal([...html.matchAll(/Watch on YouTube/g)].length, 4);
+  assert.equal([...html.matchAll(/Watch on YouTube/g)].length, 9);
 });
 
 test('no unverified Selar or payment links; each package keeps a WhatsApp booking button', function () {
