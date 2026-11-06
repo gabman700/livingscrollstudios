@@ -132,6 +132,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a:hover{color:var(--gold2)}
+
+    /* Leadership contact box: centred, email kept on one line */
+    .leadership-contact{margin:1.6rem auto 0;padding:1.2rem 1.4rem;border:1px solid #3a2f1e;border-radius:8px;max-width:520px;box-sizing:border-box;text-align:center}
+    .leadership-contact .lc-email{white-space:nowrap}
+    @media (max-width:440px){.leadership-contact{padding:1rem .9rem}.leadership-contact .lc-email{font-size:.82rem}}
 </style>
 <script src="/consent.js" defer></script>
 </head>
@@ -330,10 +335,10 @@ footer a:hover{color:var(--gold2)}
       <a class="btn btn-ghost" href="https://www.youtube.com/@LivingScrollStudios" target="_blank" rel="noopener">YouTube</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/gabriel-ogunsanya-706484315/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-        <div class="leadership-contact" style="margin-top:1.6rem;padding:1.2rem 1.4rem;border:1px solid var(--line, #3a2f1e);border-radius:8px;max-width:520px">
+        <div class="leadership-contact">
       <h3 style="margin:0 0 .5rem">Creative Leadership &amp; Production Enquiries</h3>
       <p style="margin:0"><strong>Gabriel Ogunsanya</strong><br>Creative Director &amp; Head of Video Production<br>Living Scroll Studios</p>
-      <p style="margin:.7rem 0 0">Email: <a href="mailto:gabrielogunsanya@livingscrollstudios.com">gabrielogunsanya@livingscrollstudios.com</a><br>Website: <a href="https://livingscrollstudios.com/">https://livingscrollstudios.com/</a></p>
+      <p style="margin:.7rem 0 0">Email: <a class="lc-email" href="mailto:gabrielogunsanya@livingscrollstudios.com">gabrielogunsanya@livingscrollstudios.com</a><br>Website: <a href="https://livingscrollstudios.com/">https://livingscrollstudios.com/</a></p>
     </div>
   </div>
 </section>
