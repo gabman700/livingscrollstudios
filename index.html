@@ -5,10 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Living Scroll Studios — Cinematic AI Films & Music Videos</title>
 <meta name="description" content="Living Scroll Studios directs cinematic AI films and music videos — premium music videos for artists across Afrobeats, Amapiano, R&B and more, plus biblical storytelling for churches and ministries.">
-<meta property="og:title" content="Living Scroll Studios — Cinematic AI Filmmaking">
-<meta property="og:description" content="Cinematic AI music videos for artists, and cinematic AI films for churches & ministries.">
+<link rel="canonical" href="https://livingscrollstudios.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Living Scroll Studios">
+<meta property="og:title" content="Living Scroll Studios — Cinematic AI Films & Music Videos">
+<meta property="og:description" content="Living Scroll Studios directs cinematic AI films and music videos — premium music videos for artists across Afrobeats, Amapiano, R&B and more, plus biblical storytelling for churches and ministries.">
 <meta property="og:image" content="https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg">
-<meta property="og:url" content="https://livingscrollstudios.com">
+<meta property="og:url" content="https://livingscrollstudios.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Living Scroll Studios — Cinematic AI Films & Music Videos">
+<meta name="twitter:description" content="Living Scroll Studios directs cinematic AI films and music videos — premium music videos for artists across Afrobeats, Amapiano, R&B and more, plus biblical storytelling for churches and ministries.">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23120f0a'/><text x='32' y='42' font-family='Georgia' font-size='28' fill='%23c9a45c' text-anchor='middle'>LS</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,8 +148,69 @@ footer a:hover{color:var(--gold2)}
     .leadership-contact{margin:1.6rem auto 0;padding:1.2rem 1.4rem;border:1px solid #3a2f1e;border-radius:8px;max-width:520px;box-sizing:border-box;text-align:center}
     .leadership-contact .lc-email{white-space:nowrap}
     @media (max-width:440px){.leadership-contact{padding:1rem .9rem}.leadership-contact .lc-email{font-size:.82rem}}
+/* Mobile menu: CSS-only disclosure, no script */
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid #c9a45c;border-radius:10px;color:#e3c68a;background:transparent}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary:focus-visible{outline:2px solid #e3c68a;outline-offset:2px}
+.mnav summary span{display:block;width:18px;height:2px;background:currentColor;position:relative}
+.mnav summary span::before,.mnav summary span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:currentColor}
+.mnav summary span::before{top:-6px}.mnav summary span::after{top:6px}
+.mnav-panel{position:absolute;right:0;top:calc(100% + 10px);width:min(280px,calc(100vw - 32px));background:#15110b;border:1px solid #3a2f1e;border-radius:12px;padding:8px;display:grid;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.mnav-panel a{display:flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:8px;color:#efe6d6;text-decoration:none;font-size:.95rem}
+.mnav-panel a:hover,.mnav-panel a:focus-visible{background:#1d1810;color:#e3c68a;outline:none}
+.mnav-panel a.mnav-cta{color:#1a140a;background:#c9a45c;justify-content:center;margin-top:4px}
+@media(max-width:1023px){.mnav{display:block}}
+@media(max-width:440px){nav .btn{display:none}}
 </style>
 <script src="/consent.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://livingscrollstudios.com/#organization",
+      "name": "Living Scroll Studios",
+      "url": "https://livingscrollstudios.com/",
+      "email": "gabrielogunsanya@livingscrollstudios.com",
+      "description": "Living Scroll Studios directs cinematic AI films and music videos — premium music videos for artists across Afrobeats, Amapiano, R&B and more, plus biblical storytelling for churches and ministries.",
+      "sameAs": [
+        "https://www.youtube.com/@LivingScrollStudios",
+        "https://www.youtube.com/@lssvisuals",
+        "https://www.linkedin.com/in/gabriel-ogunsanya-706484315/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://livingscrollstudios.com/#website",
+      "url": "https://livingscrollstudios.com/",
+      "name": "Living Scroll Studios",
+      "publisher": {
+        "@id": "https://livingscrollstudios.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "AI music videos for artists",
+      "serviceType": "AI music video production",
+      "description": "Cinematic AI music videos for Afrobeats, Amapiano, R&B, gospel and more.",
+      "provider": {
+        "@id": "https://livingscrollstudios.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Cinematic biblical films for churches and ministries",
+      "serviceType": "Biblical film production",
+      "description": "Scripture-based cinematic films for sermons, series launches, worship and online outreach. Quoted per project.",
+      "provider": {
+        "@id": "https://livingscrollstudios.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -161,6 +229,10 @@ footer a:hover{color:var(--gold2)}
       <a href="/nigeria/">Nigeria (NGN)</a>
     </div>
     <a href="/booking-request/" class="btn btn-gold" style="padding:.6rem 1.1rem;font-size:.85rem">Start a project</a>
+    <details class="mnav">
+      <summary aria-label="Open menu"><span></span></summary>
+      <div class="mnav-panel"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a><a href="/booking-request/">Request Booking</a><a href="/south-africa/">South Africa (ZAR)</a><a href="/nigeria/">Nigeria (NGN)</a><a class="mnav-cta" href="/booking-request/">Start a project</a></div>
+    </details>
   </div>
 </nav>
 
@@ -168,7 +240,7 @@ footer a:hover{color:var(--gold2)}
   <div class="hero-bg" role="img" aria-label="Stills from Living Scroll Studios' music video and biblical film work"></div>
   <div class="wrap">
     <div class="eyebrow">AI Filmmaking · Music Videos · Cinematic Storytelling</div>
-    <h1>Cinematic Stories,<br><em>Any Genre</em></h1>
+    <h1>Cinematic Stories<br><em>for Artists &amp; Ministries</em></h1>
     <p class="lead">Living Scroll Studios directs cinematic AI music videos for artists — Afrobeats, Amapiano, R&amp;B and more — plus biblical films for churches and ministries. Real storytelling, directed with purpose.</p>
     <div class="ctas">
       <a href="#work" class="btn btn-gold">Watch our work</a>
@@ -335,6 +407,7 @@ footer a:hover{color:var(--gold2)}
     <p class="lead">Tell us about your ministry project or your song. We reply within 24–48 hours.</p>
     <div class="ctas">
       <a class="btn btn-gold" href="mailto:gabrielogunsanya@livingscrollstudios.com?subject=New%20project%20enquiry%20-%20Living%20Scroll%20Studios">Email the studio</a>
+      <a class="btn btn-gold" href="https://wa.me/2347047237739?text=Hello%20Living%20Scroll%20Studios%2C%20I%27d%20like%20to%20ask%20about%20a%20project." target="_blank" rel="noopener">Message us on WhatsApp</a>
       <a class="btn btn-ghost" href="/booking-request/">Book a music video</a>
       <a class="btn btn-ghost" href="https://www.youtube.com/@LivingScrollStudios" target="_blank" rel="noopener">YouTube</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/gabriel-ogunsanya-706484315/" target="_blank" rel="noopener">LinkedIn</a>

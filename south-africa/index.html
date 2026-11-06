@@ -5,8 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Book a music video in South Africa | Living Scroll Studios</title>
+<title>AI Music Videos for South African Artists | Living Scroll Studios</title>
 <meta name="description" content="Living Scroll Studios music video packages for South African artists and ministries, priced in South African rand (ZAR). Book online and pay the 50% deposit in rand through Selar; the deposit secures your production slot.">
+<link rel="canonical" href="https://livingscrollstudios.com/south-africa/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Living Scroll Studios">
+<meta property="og:title" content="AI Music Videos for South African Artists | Living Scroll Studios">
+<meta property="og:description" content="Living Scroll Studios music video packages for South African artists and ministries, priced in South African rand (ZAR). Book online and pay the 50% deposit in rand through Selar; the deposit secures your production slot.">
+<meta property="og:url" content="https://livingscrollstudios.com/south-africa/">
+<meta property="og:image" content="https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Music Videos for South African Artists | Living Scroll Studios">
+<meta name="twitter:description" content="Living Scroll Studios music video packages for South African artists and ministries, priced in South African rand (ZAR). Book online and pay the 50% deposit in rand through Selar; the deposit secures your production slot.">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/RBP6v1-6Yxs/maxresdefault.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23120f0a'/><text x='32' y='42' font-family='Georgia' font-size='28' fill='%23c9a45c' text-anchor='middle'>LSS</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +140,22 @@ footer a:hover{color:var(--gold2)}
     .leadership-contact{margin:1.6rem auto 0;padding:1.2rem 1.4rem;border:1px solid #3a2f1e;border-radius:8px;max-width:520px;box-sizing:border-box;text-align:center}
     .leadership-contact .lc-email{white-space:nowrap}
     @media (max-width:440px){.leadership-contact{padding:1rem .9rem}.leadership-contact .lc-email{font-size:.82rem}}
+/* Mobile menu: CSS-only disclosure, no script */
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid #c9a45c;border-radius:10px;color:#e3c68a;background:transparent}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary:focus-visible{outline:2px solid #e3c68a;outline-offset:2px}
+.mnav summary span{display:block;width:18px;height:2px;background:currentColor;position:relative}
+.mnav summary span::before,.mnav summary span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:currentColor}
+.mnav summary span::before{top:-6px}.mnav summary span::after{top:6px}
+.mnav-panel{position:absolute;right:0;top:calc(100% + 10px);width:min(280px,calc(100vw - 32px));background:#15110b;border:1px solid #3a2f1e;border-radius:12px;padding:8px;display:grid;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.mnav-panel a{display:flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:8px;color:#efe6d6;text-decoration:none;font-size:.95rem}
+.mnav-panel a:hover,.mnav-panel a:focus-visible{background:#1d1810;color:#e3c68a;outline:none}
+.mnav-panel a.mnav-cta{color:#1a140a;background:#c9a45c;justify-content:center;margin-top:4px}
+@media(max-width:820px){.mnav{display:block}}
+@media(max-width:440px){nav .btn{display:none}}
+.work-tag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#c9a45c;margin:.35rem 0 0}
+.work-desc{font-size:.9rem;line-height:1.55;color:#b5a88f;margin:.4rem 0 0}
 </style>
 </head>
 <body>
@@ -143,6 +170,10 @@ footer a:hover{color:var(--gold2)}
       <a href="#contact">Contact</a>
     </div>
     <a href="#packages" class="btn btn-gold" style="padding:.6rem 1.1rem;font-size:.85rem">View prices</a>
+    <details class="mnav">
+      <summary aria-label="Open menu"><span></span></summary>
+      <div class="mnav-panel"><a href="#work">Work</a><a href="#process">Process</a><a href="#packages">Packages</a><a href="#contact">Contact</a><a class="mnav-cta" href="#packages">View prices</a></div>
+    </details>
   </div>
 </nav>
 
@@ -150,7 +181,7 @@ footer a:hover{color:var(--gold2)}
   <div class="hero-bg" role="img" aria-label="Stills from Living Scroll Studios' music video work"></div>
   <div class="wrap">
     <div class="eyebrow">South Africa · Music Videos · Cinematic Storytelling</div>
-    <h1>Book a music video<br><em>in South Africa</em></h1>
+    <h1>AI Music Videos<br><em>for South African Artists</em></h1>
     <p class="lead">Our music videos are created with generative AI in a directed filmmaking process. Choose a package, click Book Now and pay the 50% deposit in South African rand (ZAR) through Selar, then send us your song and brief. Production takes 5 days, once your deposit and your song and brief have been received.</p>
     <div class="ctas">
       <a href="#packages" class="btn btn-gold">See the packages</a>
@@ -171,6 +202,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/WKdoRQToIVc?rel=0" title="UNDENIABLE LOVE ❤️ | Romantic UK Pop R&amp;B Music Video | Living Scroll Studio" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>UNDENIABLE LOVE ❤️ | Romantic UK Pop R&amp;B Music Video | Living Scroll Studio</h3>
+        <p class="work-tag">UK Pop / R&amp;B · Romantic music video</p>
+        <p class="work-desc">A cinematic romantic music video set in London, exploring the beauty of falling in love, emotional connection and the moments that make love undeniable. AI-assisted filmmaking with consistent characters and music-driven storytelling.</p>
         <a class="watch" href="https://www.youtube.com/shorts/WKdoRQToIVc" rel="noopener">Watch on YouTube</a>
       </article>
       <article class="work-card">
@@ -178,6 +211,7 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/ERpq_5jUbP4?rel=0" title="YOU NEVER LET ME GO | Cinematic Gospel Music Video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>YOU NEVER LET ME GO | Cinematic Gospel Music Video</h3>
+        <p class="work-tag">YouTube Short</p>
         <a class="watch" href="https://www.youtube.com/shorts/ERpq_5jUbP4" rel="noopener">Watch on YouTube</a>
       </article>
       <article class="work-card">
@@ -185,6 +219,7 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/ZpQgVRqv7is?rel=0" title="YOU NO DEY FAIL 🙌 | Nigerian Gospel Afrobeats | Dependable God | Living Scroll Studio" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>YOU NO DEY FAIL 🙌 | Nigerian Gospel Afrobeats | Dependable God | Living Scroll Studio</h3>
+        <p class="work-tag">YouTube Short</p>
         <a class="watch" href="https://www.youtube.com/shorts/ZpQgVRqv7is" rel="noopener">Watch on YouTube</a>
       </article>
       <article class="work-card">
@@ -192,6 +227,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/GtJBdLrgl38?rel=0" title="I GLOW — Cinematic AI Afrobeats Music Video | Living Scroll Studios" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>I GLOW — Cinematic AI Afrobeats Music Video | Living Scroll Studios</h3>
+        <p class="work-tag">Afrobeats club video</p>
+        <p class="work-desc">Club lights, city energy and an Afrobeats groove that doesn't let up.</p>
         <a class="watch" href="https://www.youtube.com/shorts/GtJBdLrgl38" rel="noopener">Watch on YouTube</a>
       </article>
       <article class="work-card">
@@ -199,6 +236,7 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/msya4chEh10?rel=0" title="LIFT UP YOUR HEAD PART 1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>LIFT UP YOUR HEAD PART 1</h3>
+        <p class="work-tag">YouTube Short</p>
         <a class="watch" href="https://www.youtube.com/shorts/msya4chEh10" rel="noopener">Watch on YouTube</a>
       </article>
     </div>
@@ -209,6 +247,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/pKyHAwMQ35Q?rel=0" title="Yebo: Afrobeats x Amapiano dance video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>Yebo</h3>
+        <p class="work-tag">Afrobeats x Amapiano dance video</p>
+        <p class="work-desc">One consistent artist across six locations (studio, rooftop, streets and the big stage) with a full dance crew.</p>
         <p>Afrobeats x Amapiano dance video. One artist across six locations, with a full dance crew.</p>
         <a class="watch" href="https://www.youtube.com/watch?v=pKyHAwMQ35Q" rel="noopener">Watch on YouTube</a>
         <span class="tag">For independent artists</span>
@@ -218,6 +258,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/x-gnlZfUs_U?rel=0" title="Midnight Bloom: R&amp;B and neo-soul music video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>Midnight Bloom</h3>
+        <p class="work-tag">R&amp;B / Neo-soul</p>
+        <p class="work-desc">Warm, intimate performance staging, recurring artist identity and multi-location continuity.</p>
         <p>R&amp;B and neo-soul performance. Warm, intimate staging with one recurring artist across several locations.</p>
         <a class="watch" href="https://www.youtube.com/watch?v=x-gnlZfUs_U" rel="noopener">Watch on YouTube</a>
         <span class="tag">For independent artists</span>
@@ -227,6 +269,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/8KvAYfOOLuA?rel=0" title="Fí Ìbùkún Rẹ́ Tú Wá Ká: Yoruba worship film" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>Fí Ìbùkún Rẹ́ Tú Wá Ká</h3>
+        <p class="work-tag">Yoruba worship film</p>
+        <p class="work-desc">Yoruba worship music paired with cinematic scenes of Jesus teaching and comforting His disciples.</p>
         <p>A Yoruba worship film built on a classic hymn, with cinematic scenes of Jesus teaching and comforting His disciples.</p>
         <a class="watch" href="https://www.youtube.com/watch?v=8KvAYfOOLuA" rel="noopener">Watch on YouTube</a>
         <span class="tag">For gospel artists</span>
@@ -236,6 +280,8 @@ footer a:hover{color:var(--gold2)}
           <iframe src="https://www.youtube-nocookie.com/embed/PURCv5nHZ6I?rel=0" title="The Chronicler: Noah and the Great Flood" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
         <h3>The Chronicler: Noah and the Great Flood</h3>
+        <p class="work-tag">Cinematic Bible short</p>
+        <p class="work-desc">Noah through the corruption of the earth, the Ark, the Flood, survival and God's covenant.</p>
         <p>A cinematic Scripture-based film, from the corruption of the earth through the Ark, the Flood and God's covenant.</p>
         <a class="watch" href="https://www.youtube.com/watch?v=PURCv5nHZ6I" rel="noopener">Watch on YouTube</a>
         <span class="tag">For churches and ministries</span>

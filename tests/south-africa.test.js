@@ -124,8 +124,10 @@ test('no form, no script; only approved font links', function () {
   assert.equal(/<(img|object|embed)\b[^>]*\b(src|href)="https?:/i.test(html), false);
   const frames = [...html.matchAll(/<iframe\b[^>]*\bsrc="([^"]+)"/gi)].map(function (m) { return m[1]; });
   frames.forEach(function (u) { assert.ok(/^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]{11}\?rel=0$/.test(u), 'unexpected frame: ' + u); });
-  const links = [...html.matchAll(/<link [^>]*href="(https?:[^"]+)"/g)].map(function (m) { return m[1]; });
+  const links = [...html.matchAll(/<link ([^>]*)href="(https?:[^"]+)"/g)].filter(function (m) { return !/rel="canonical"/.test(m[1]); }).map(function (m) { return m[2]; });
   links.forEach(function (u) { assert.ok(/^https:\/\/(fonts\.googleapis\.com|fonts\.gstatic\.com)(\/|$)/.test(u), 'unexpected link: ' + u); });
+  const canonical = [...html.matchAll(/<link rel="canonical" href="([^"]+)"/g)].map(function (m) { return m[1]; });
+  assert.deepEqual(canonical, ['https://livingscrollstudios.com/south-africa/']);
   assert.match(html, /http-equiv="Content-Security-Policy" content="default-src 'none'/);
 });
 

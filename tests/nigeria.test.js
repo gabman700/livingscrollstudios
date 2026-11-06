@@ -94,7 +94,7 @@ test('no placeholder, draft or noindex markers; no other payment providers linke
 });
 
 test('SEO: Nigeria-specific title and description, canonical URL, indexable', function () {
-  assert.match(html, /<title>Book a music video in Nigeria \| Living Scroll Studios<\/title>/);
+  assert.match(html, /<title>AI Music Videos for Nigerian Artists \| Living Scroll Studios<\/title>/);
   assert.match(html, /<meta name="description" content="[^"]*Nigerian[^"]*naira/);
   assert.match(html, /<link rel="canonical" href="https:\/\/livingscrollstudios\.com\/nigeria\/">/);
 });
